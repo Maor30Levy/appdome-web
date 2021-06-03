@@ -16,7 +16,7 @@ router.post('/server', async (req, res) => {
         return res.send(result.data);
     } catch (err) {
         console.log(err)
-        if (err.response?.status)
+        if (err.response)
             return res.status(err.response.status).send(err.response.data);
 
         else return res.status(400).send(err);
